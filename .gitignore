@@ -39,5 +39,4 @@ Thumbs.db
 # Optional: ignore yarn lock or package-lock (if only one is used)
 # yarn.lock
 # package-lock.json
-client/.env
 server/.env
