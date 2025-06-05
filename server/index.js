@@ -20,7 +20,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'https://chat-qvpjgq7y2-serhiy-sokalskiys-projects.vercel.app',
+    origin: 'https://chat-app-zeta-six-39.vercel.app/',
     methods: ['GET', 'POST'],
     credentials: true
   }
@@ -29,7 +29,7 @@ const io = new Server(server, {
 app.set('io', io);
 
 app.use(cors({
-  origin: 'https://chat-qvpjgq7y2-serhiy-sokalskiys-projects.vercel.app',
+  origin: 'https://chat-app-zeta-six-39.vercel.app/',
   credentials: true
 }));
 app.use(express.json());
