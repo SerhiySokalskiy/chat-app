@@ -66,7 +66,7 @@ app.get('/auth/google',
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
-    res.redirect('http://localhost:3000');
+    res.redirect('https://chat-app-zeta-six-39.vercel.app');
   }
 );
 
@@ -86,7 +86,7 @@ app.get('/api/me', (req, res) => {
 app.get('/auth/logout', (req, res) => {
   req.logout(function(err) {
     if (err) { return next(err); }
-    res.redirect('http://localhost:3000');
+    res.redirect('https://chat-app-zeta-six-39.vercel.app');
   });
 });
 
