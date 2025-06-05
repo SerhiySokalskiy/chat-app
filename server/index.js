@@ -17,6 +17,7 @@ const passport = require('passport');
 require('./config/passport');
 
 const app = express();
+app.set('trust proxy', 1);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -41,9 +42,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
+    secure: true, // HTTPS only
     httpOnly: true,
-    secure: false, 
-    sameSite: 'lax'
+    sameSite: 'none'
   }
 }));
 app.use(passport.authenticate('session'));
