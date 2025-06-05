@@ -60,6 +60,10 @@ io.on('connection', (socket) => {
   });
 });
 
+app.get('/api/ping', (req, res) => {
+  res.send('pong');
+});
+
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 );
