@@ -12,7 +12,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
     const fetchChats = async () => {
-      const res = await axios.get('https://chat-app-b87f.onrender.com/api/chats');
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/chats`);
       setChats(res.data);
     };
 
@@ -23,7 +23,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios.get('https://chat-app-b87f.onrender.com/api/me', { withCredentials: true })
+    axios.get(`${process.env.REACT_APP_API_URL}/api/me`, { withCredentials: true })
       .then(res => setUser(res.data))
       .catch(() => setUser(null));
   }, []);
@@ -34,13 +34,13 @@ function App() {
       <div style={{display: 'flex', flexDirection: 'column'}}>
         {user ? (
         <div style={{padding: '0px 16px'}}>
-          <a href="https://chat-app-b87f.onrender.com/auth/logout">
+          <a href={`${process.env.REACT_APP_API_URL}/auth/logout`}>
             <button style={{ padding: '8px 16px' }}>Вийти</button>
           </a>
         </div >
           ) : (
         <div style={{padding: '0px 16px'}}>
-          <a href="https://chat-app-b87f.onrender.com/auth/google">
+          <a href={`${process.env.REACT_APP_API_URL}/auth/google`}>
             <button style={{ padding: '8px 16px' }}>Увійти через Google</button>
           </a>
         </div>  
