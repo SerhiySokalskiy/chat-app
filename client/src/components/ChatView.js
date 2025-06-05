@@ -4,7 +4,7 @@ import MessageBubble from './MessageBubble';
 import { io } from 'socket.io-client';
 import { toast } from 'react-toastify';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://chat-app-b87f.onrender.com');
 
 const ChatView = ({ chat, user, userAvatar }) => {
   const [messages, setMessages] = useState([]);
@@ -15,7 +15,7 @@ const ChatView = ({ chat, user, userAvatar }) => {
     if (!message.trim()) return;
 
     try {
-      await axios.post('http://localhost:5000/api/messages', {
+      await axios.post('https://chat-app-b87f.onrender.com/api/messages', {
         chatId: chat._id,
         sender: 'user',
         text: message
@@ -32,7 +32,7 @@ const ChatView = ({ chat, user, userAvatar }) => {
 
     const fetchMessages = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/messages/${chat._id}`);
+        const res = await axios.get(`https://chat-app-b87f.onrender.com/api/messages/${chat._id}`);
         setMessages(res.data);
       } catch (err) {
         console.error(err);

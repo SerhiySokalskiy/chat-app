@@ -7,7 +7,7 @@ const DeleteChatBtn = ({fetchChats, setShownChat, chatid}) => {
     const onDelete = async () => {
         console.log("chat id :" + chatid)
         try {
-            await axios.delete(`http://localhost:5000/api/chats/${chatid}`);
+            await axios.delete(`https://chat-app-b87f.onrender.com/api/chats/${chatid}`);
             fetchChats();
             setShownChat(null);
         } catch (error) {

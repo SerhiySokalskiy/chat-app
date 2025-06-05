@@ -21,9 +21,9 @@ function AddChatModal({ onClose, fetchChats, setSelectedChat, chat }) {
     try {
         if (chat) {
             const id = chat._id
-            await axios.patch(`http://localhost:5000/api/chats/${id}`, { firstName, lastName });
+            await axios.patch(`https://chat-app-b87f.onrender.com/api/chats/${id}`, { firstName, lastName });
         } else {
-        await axios.post('http://localhost:5000/api/chats/', {
+        await axios.post('https://chat-app-b87f.onrender.com/api/chats/', {
             firstName,
             lastName,
         });

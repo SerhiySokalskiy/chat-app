@@ -10,7 +10,7 @@ const ChatListPage = () => {
     useEffect(() => {
         const fetchChats = async ()=> {
             try {
-                const res = await axios.get('http://localhost:5000/api/chats');
+                const res = await axios.get('https://chat-app-b87f.onrender.com/api/chats');
                 setChats(res.data);
             } catch (error) {
                 console.error('Failed to fetch chats', error.message);

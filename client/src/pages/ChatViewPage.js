@@ -14,8 +14,8 @@ const ChatViewPage = () => {
         () => {
             const fetchChatAndMessages = async () => {
                 try {
-                    const chatRes = await axios.get(`http://localhost:5000/api/chats/${id}`);
-                    const messagesRes = await axios.get(`http://localhost:5000/api/messages/${id}`);
+                    const chatRes = await axios.get(`https://chat-app-b87f.onrender.com/api/chats/${id}`);
+                    const messagesRes = await axios.get(`https://chat-app-b87f.onrender.com/api/messages/${id}`);
                     setChat(chatRes.data);
                     setMessages(messagesRes.data);
                 } catch (err) {
@@ -72,7 +72,6 @@ const ChatViewPage = () => {
     {chat.firstName} {chat.lastName}
   </h2>
 
-  {/* Права "пустишка" для симетрії, щоб заголовок був строго по центру */}
   <div style={{ width: '60px' }} />
 </div>
 
